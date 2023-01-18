@@ -24,15 +24,16 @@ This implementation is inspired by the tutorial from this [repository](https://g
 ```
 python finetune.py --batch_size 16 --device 'cuda:0' --train_epochs 10 --seed 42
 ```
+After finetuning for 10 epochs on a subset of AG news training data, the loss dropped from 
+11.60984 to 0.008037.
 
 ## Achieved Results
 The produced predictions on validation set is shown in [predictions.csv](predictions.csv).
 
 <b>Example:</b>
 
-Original text: ` `
+Original text: `Oracle to Issue Tender Results Saturday Oracle Corp.(ORCL.O: Quote,Profile,Research) said it would report preliminary results of its $8.8 billion hostile tender offer for PeopleSoft (PSFT.`
 
-Target text: ` `
+Target text: `.TFSP( tfoSelpoeP rof reffo rednet elitsoh noillib 8.8$ sti fo stluser yranimilerp troper dluow ti dias )hcraeseR,eliforP,etouQ :O.LCRO(.proC elcarO yadrutaS stluseR redneT eussI ot elcarO`
 
-Generated text: ` `
-
+Generated text: `.TFSP( tfoSelpoeP rof reffo rednet elitsoh noillib 8.8$ sti fo stluser yranimilerp troper dluow ti dias )hcraeseR,eliforP,etouQ :O.LCRO(.proC elcarO yadrutaS stluseR redneT eussI ot elcarO`
