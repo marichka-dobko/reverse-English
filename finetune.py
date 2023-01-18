@@ -12,7 +12,7 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 from datasets import load_dataset
 
 from dataset import ReverseEnglishDataset
-from train import train, validate
+from training_utils import train, validate
 
 
 def main():
