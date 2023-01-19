@@ -1,10 +1,14 @@
 # Training a T5 model to reverse English news articles
 
+In this repository a pre-trained T5 model is finetuned to reverse the news articles. 
+A custom developed dataset is used for this task.
+
 ## Dataset
-The used dataset is AG news. It's a collection of more than 1 million news articles gathered from more than 2000 news sources.
+The dataset used for this task is AG news. It's a collection of more than 1 million news articles gathered from more than 2000 news sources.
 For more information please refer to this [website](https://huggingface.co/datasets/ag_news).
 
-The train/validation split for all experiments was the following: Train: 96,000 articles, Validation: 23,999 articles.
+The training part of AG news was split into train and dev sets with 0.8 to 0.2 ratio respectively.
+The resulting train/validation split for all experiments was the following: Train: 96,000 articles, Validation: 23,999 articles.
 
 ## Model
 The architecture used in these experiments is T5 encoder-decoder model pre-trained on a 
@@ -13,10 +17,10 @@ Implementation is from Hugging Face transformers library - [link](https://huggin
 
 ## Dependencies
 For all necessary modules refer to [requirements.txt](requirements.txt)
+This implementation is inspired by [this](https://github.com/abhimishra91/transformers-tutorials) tutorial.
 ```
 pip3 install -r requirements.txt
 ```
-This implementation is inspired by the tutorial from this [repository](https://github.com/abhimishra91/transformers-tutorials).
 
 
 ## Training
@@ -24,11 +28,11 @@ This implementation is inspired by the tutorial from this [repository](https://g
 ```
 python finetune.py --batch_size 16 --device 'cuda:0' --train_epochs 10 --seed 42
 ```
-After finetuning for 10 epochs on a subset of AG news training data, the loss dropped from 
+After finetuning for 10 epochs on AG news training data, the loss on train set dropped from 
 11.60984 to 0.008037.
 
 ## Achieved Results
-The produced predictions on validation set is shown in [predictions.csv](predictions.csv).
+The produced predictions on validation set after training for 10 epochs is shown in [predictions.csv](predictions.csv).
 
 <b>Example:</b>
 
